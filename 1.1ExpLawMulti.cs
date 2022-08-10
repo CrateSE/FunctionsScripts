@@ -1,37 +1,47 @@
-﻿void ExLawForMulti()
+﻿//ExLawForMulti just to do calculations and return the answers.
+static void Splicer(int numbas, string term)
 {
-    Console.Write("Chose how many bases you'd like: ");
-    int numberofbases = Convert.ToInt32(Console.ReadLine());
 
-    //Ordinals
-
-    // string Ordinals = "";
-
-
-    for (int counter = 0; numberofbases > counter; counter++)
+    for (int counter = 0; counter < numbas; counter++)
     {
-        int numericalrep = counter + 1;
-        Console.Write("What would you like your " + numericalrep + " variable to be: "); 
-        int basenum = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("What would you like your " + numericalrep + " x exponent to be: ");
-        int Xexp = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("What would you like your " + numericalrep + " y exponent to be: ");
-        int Yexp = Convert.ToInt32(Console.ReadLine());
-
-        int finalbase = basenum * basenum;
-        int finalxexp = Xexp + Xexp;
-        int finalyexp = Yexp + Yexp;
-
-        if (numberofbases - 1 == counter)
+        //Term divider. Seperates each character into placements of an array.
+        char[] ch = new char[term.Length];
+        //This for-loop splices each character into an addressable variable.
+        for (int i = 0; i < term.Length; i++)
         {
-            Console.Write("---------------------------" + '\n');
-            Console.Write(finalbase + " x^" + finalxexp + " y^" + finalyexp);
+            ch[i] = term[i];
+            //Breaks terms to exponent and creates addressable exponential number.
+            if (ch[i] == '^')
+            {
+                int realnum = Convert.ToInt32(ch[i - 2]);
+                int exponent = Convert.ToInt32(ch[i + 1]);
+                char charactervar = Convert.ToChar(ch[i - 1]);
+                Console.WriteLine(realnum);
+                Console.WriteLine(exponent);
+                Console.WriteLine(charactervar);
+            }
         }
-
     }
+
 }
-ExLawForMulti();
+static void calculations(int realnum, int exponent, int charactervar)
+{
+
+}
+static void Main()
+{
+    string? term = "";
+    Console.WriteLine("How many terms would you like?: ");
+    int numbas = Convert.ToInt32(Console.ReadLine());
+
+    for (int x = 0; x < numbas; x++)
+    {
+        Console.WriteLine("What is your current term?: ");
+        term = Console.ReadLine();
+    }
 
 
+    Splicer(numbas, term);
+
+}
+Main();
