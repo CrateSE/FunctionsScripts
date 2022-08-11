@@ -17,13 +17,12 @@ namespace ExpLawMulti
             Console.WriteLine("What is the second exponent you'd like to add?: ");
             double exp2 = Convert.ToDouble(Console.ReadLine());
 
-            double finexp = exp1 + exp2;
+            double finexp = exp1 - exp2;
 
             double finans = Math.Pow(var, finexp);
 
             Console.Write("The result is: {0}^({1} + {2}) = {3}" + '\n' + "{0}^{3} = {4}", var, exp1, exp2, finexp, finans);
         }
         ExpLawMulti();
-
     }
 }
