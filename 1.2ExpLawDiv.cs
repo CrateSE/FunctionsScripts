@@ -1,6 +1,6 @@
 using System;
 
-namespace ExpLawMulti
+namespace ExpLawDiv
 {
 
     public static void Main(string[] args)
