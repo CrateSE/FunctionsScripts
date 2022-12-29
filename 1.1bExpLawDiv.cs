@@ -15,9 +15,7 @@ namespace ExpLawDiv
             Console.WriteLine("What is the second exponent you'd like to subtract?: ");
             double exp2 = Convert.ToDouble(Console.ReadLine());
 
-
             double finexp = exp1 - exp2;
-
 
             if (exp1 < exp2)
             {
